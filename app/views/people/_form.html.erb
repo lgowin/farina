@@ -1,0 +1,29 @@
+<%= form_for(@person) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% @person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :group %><br>
+    <%= f.select :group, [['CDN Arch', 'CDN Arch'], ['CDN Dev', 'CDN Dev'], ['OSP Dev', 'OSP Dev'], ['CDN Eng', 'CDN Eng'], ['OSS Dev', 'OSS Dev'], ['BSS Dev', 'BSS Dev'], ['QA', 'QA'], ['Prod Dev', 'Prod Dev'], ['Prod Mgmt', 'Prod Mgmt'], ['CDN MSS', 'CDN MSS'], ['CDN MNOC', 'CDN MNOC'], ['IT', 'IT']] %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :person_notes %><br>
+    <%= f.text_area :person_notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

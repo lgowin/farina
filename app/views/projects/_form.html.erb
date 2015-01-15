@@ -1,0 +1,57 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :project_name %><br>
+    <%= f.text_field :project_name %>
+  </div>
+  <div class="field">
+    <%= f.label :product_line %><br>
+    <%= f.select :product_line, [['CDN', 'CDN'], ['Vyvx', 'Vyvx']] %>
+  </div>
+  <div class="field">
+    <%= f.label :program_id %><br>
+    <%= f.collection_select :program_id, Program.all, :id, :program_name, prompt: true %>
+  </div>
+  <div class="field">
+    <%= f.label :project_priority %><br>
+    <%= f.select :project_priority, [['A', 'A'], ['B', 'B'], ['C', 'C']] %>
+  </div>
+  <div class="field">
+    <%= f.label :project_phase %><br>
+    <%= f.select :project_phase, [['Concept', 'Concept'], ['Val - Launch', 'Val - Launch'], ['Complete', 'Complete'], ['Not Started', 'Not Started'], ['Cancelled', 'Cancelled']] %><br>
+  </div>
+  <div class="field">
+    <%= f.label :sponsor %><br>
+    <%= f.select :sponsor, [['PD', 'PD'], ['Infrastructure', 'Infrastructure']]  %>
+  </div>
+  <div class="field">
+    <%= f.label :person_id %><br>
+    <%= f.collection_select :person_id, Person.all, :id, :name, prompt: true %>
+  </div>
+  <div class="field">
+    <%= f.label :proj_status %><br>
+    <%= f.select :proj_status, [['Green', 'Green'], ['Yellow', 'Yellow'], ['Red', 'Red']] %>
+  </div>
+  <div class="field">
+    <%= f.label :proj_status_prev %><br>
+    <%= f.select :proj_status_prev, [['Green', 'Green'], ['Yellow', 'Yellow'], ['Red', 'Red']] %>
+  </div>
+  <div class="field">
+    <%= f.label :proj_notes %><br>
+    <%= f.text_area :proj_notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

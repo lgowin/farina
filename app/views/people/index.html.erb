@@ -1,0 +1,318 @@
+
+<h1>Content & Media People</h1>
+
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Return to Project Dashboard', projects_url %>
+
+<br>
+<br>
+
+<table>
+  <table border = "2" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Name</th>
+      <th>Person notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+    <% if person.group == "CDN Arch" %>
+      <tr>
+        <td><%= person.group %></td>
+        <td><%= person.name %></td>
+        <td><%= person.person_notes %></td>
+        <td><%= link_to 'Person Detail', person %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>CDN Development</h2>
+<table>
+  <table border = "2" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Name</th>
+      <th>Person notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+    <% if person.group == "CDN Dev" %>
+      <tr>
+        <td><%= person.group %></td>
+        <td><%= person.name %></td>
+        <td><%= person.person_notes %></td>
+        <td><%= link_to 'Person Detail', person %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>OSP Development</h2>
+<table>
+  <table border = "2" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Name</th>
+      <th>Person notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+    <% if person.group == "OSP Dev" %>
+      <tr>
+        <td><%= person.group %></td>
+        <td><%= person.name %></td>
+        <td><%= person.person_notes %></td>
+        <td><%= link_to 'Person Detail', person %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>OSS Development</h2>
+<table>
+  <table border = "2" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Name</th>
+      <th>Person notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+    <% if person.group == "OSS Dev" %>
+      <tr>
+        <td><%= person.group %></td>
+        <td><%= person.name %></td>
+        <td><%= person.person_notes %></td>
+        <td><%= link_to 'Person Detail', person %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>BSS Development</h2>
+<table>
+  <table border = "2" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Name</th>
+      <th>Person notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+    <% if person.group == "BSS Dev" %>
+      <tr>
+        <td><%= person.group %></td>
+        <td><%= person.name %></td>
+        <td><%= person.person_notes %></td>
+        <td><%= link_to 'Person Detail', person %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>CDN Engineering</h2>
+<table>
+  <table border = "2" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Name</th>
+      <th>Person notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+    <% if person.group == "CDN Eng" %>
+      <tr>
+        <td><%= person.group %></td>
+        <td><%= person.name %></td>
+        <td><%= person.person_notes %></td>
+        <td><%= link_to 'Person Detail', person %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>Quality Assurance</h2>
+<table>
+  <table border = "2" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Name</th>
+      <th>Person notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+    <% if person.group == "QA" %>
+      <tr>
+        <td><%= person.group %></td>
+        <td><%= person.name %></td>
+        <td><%= person.person_notes %></td>
+        <td><%= link_to 'Person Detail', person %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>Product Development</h2>
+<table>
+  <table border = "2" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Name</th>
+      <th>Person notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+    <% if person.group == "Prod Dev" %>
+      <tr>
+        <td><%= person.group %></td>
+        <td><%= person.name %></td>
+        <td><%= person.person_notes %></td>
+        <td><%= link_to 'Person Detail', person %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>CDN Ops Eng (MSS)</h2>
+<table>
+  <table border = "2" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Name</th>
+      <th>Person notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+    <% if person.group == "CDN MSS" %>
+      <tr>
+        <td><%= person.group %></td>
+        <td><%= person.name %></td>
+        <td><%= person.person_notes %></td>
+        <td><%= link_to 'Person Detail', person %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>Media NOC</h2>
+<table>
+  <table border = "2" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Name</th>
+      <th>Person notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+    <% if person.group == "CDN MNOC" %>
+      <tr>
+        <td><%= person.group %></td>
+        <td><%= person.name %></td>
+        <td><%= person.person_notes %></td>
+        <td><%= link_to 'Person Detail', person %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>Product Management</h2>
+<table>
+  <table border = "2" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Name</th>
+      <th>Person notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+    <% if person.group == "Prod Mgmt" %>
+      <tr>
+        <td><%= person.group %></td>
+        <td><%= person.name %></td>
+        <td><%= person.person_notes %></td>
+        <td><%= link_to 'Person Detail', person %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Person', new_person_path %>

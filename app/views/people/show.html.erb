@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @person.name %></h1>
+<p>
+  <strong>Group:</strong>
+  <%= @person.group %>
+</p>
+
+<p>
+  <strong>Person notes:</strong>
+  <%= @person.person_notes %>
+</p>
+
+<%= link_to 'Edit Person', edit_person_path(@person) %><br> 
+
+<%= link_to 'Return to Main People Page', people_path %><br>
+
+<table>
+<table border = "8" cellspacing="0" bgcolor="#FFFFE0">
+  <tr>
+      <td>Project</td>
+      <td>Num</td>
+      <td>Name</td>
+      <td>Pct of Time</td>
+      <td>Baseline Start</td>
+      <td>Baseline Finish</td>
+      <td>Projected Start</td>
+      <td>Projected Finish</td>
+      <td>Dependencies</td>
+      <td>Status</td>
+      <td>Notes</td>
+  </tr>
+<% for task in @person.tasks %>
+  <tr>
+    <td><% pid = task.project_id %>
+        <%= Project.find_by_id(pid).project_name %></td>
+    <td><%= task.task_num %></td>
+    <td><%= task.task_name %></td>
+    <td><%= task.pct_time %></td>
+    <td><%= task.base_start %></td>
+    <td><%= task.base_finish %></td>
+    <td><%= task.proj_start %></td>
+    <td><%= task.proj_finish %></td>
+    <td><%= task.task_deps %></td>
+    <td><%= task.task_status %></td>
+    <td><%= task.task_notes %></td>
+  </tr>
+<% end %>
+</table>
+
+<button style = "background-color:red"><%= link_to 'Delete Person', @person, method: :delete, data: { confirm: 'Are you sure?' } %></button><br>

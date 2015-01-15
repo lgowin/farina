@@ -1,0 +1,139 @@
+<h1><center>Projects Dashboard</center></h1>
+
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Program Page', programs_url %><br>
+<%= link_to 'People Page', people_url %><br>
+<br>
+
+<h2>Projects in Validation Through Launch</h2>
+<table>
+<table border = "5" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Program</th>
+      <th>Product line</th>
+      <th>Program</th>
+      <th>Priority</th>
+      <th>Sponsor</th>
+      <th>Project Owner</th>
+      <th>Status</th>
+      <th>Last Status</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+    <% if project.project_phase == "Val - Launch" %>
+      <tr>
+        <td><%= link_to 'Project Detail', project %></td>
+        <td><% pjid = project.program_id %>
+            <%= Program.find_by_id(pjid).program_name %></td>
+        <td><%= project.product_line %></td>
+        <td><%= project.project_name %></td>
+        <td><%= project.project_priority %></td>
+        <td><%= project.sponsor %></td>
+        <td><% prid = project.person_id %>
+            <%= Person.find_by_id(prid).name %></td>
+        <td><%= project.proj_status %></td>
+        <td><%= project.proj_status_prev %></td>
+        <td><%= project.proj_notes %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>
+
+
+<h2>Projects in Concept Phase </h2>
+<table>
+<table border = "5" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Program</th>
+      <th>Product line</th>
+      <th>Program</th>
+      <th>Priority</th>
+      <th>Sponsor</th>
+      <th>Project Owner</th>
+      <th>Status</th>
+      <th>Last Status</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+    <% if project.project_phase == "Concept" %>
+      <tr>
+        <td><%= link_to 'Project Detail', project %></td>
+        <td><%= pjid = project.program_id %>
+            <%= Program.find_by_id(pjid).program_name %></td>
+        <td><%= project.product_line %></td>
+        <td><%= project.project_name %></td>
+        <td><%= project.project_priority %></td>
+        <td><%= project.sponsor %></td>
+        <td><% prid = project.person_id %>
+            <%= Person.find_by_id(prid).name %></td>
+        <td><%= project.proj_status %></td>
+        <td><%= project.proj_status_prev %></td>
+        <td><%= project.proj_notes %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<h2>Completed Projects </h2>
+<table>
+<table border = "5" cellspacing="0" bgcolor="FFFFE0">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Program</th>
+      <th>Product line</th>
+      <th>Program</th>
+      <th>Priority</th>
+      <th>Sponsor</th>
+      <th>Project Owner</th>
+      <th>Status</th>
+      <th>Last Status</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+    <% if project.project_phase == "Complete" %>
+      <tr>
+        <td><%= link_to 'Project Detail', project %></td>
+        <td><% pjid = project.program_id %>
+            <%= Program.find_by_id(pjid).program_name %></td>
+        <td><%= project.product_line %></td>
+        <td><%= project.project_name %></td>
+        <td><%= project.project_priority %></td>
+        <td><%= project.sponsor %></td>
+        <td><% prid = project.person_id %>
+            <%= Person.find_by_id(prid).name %></td>
+        <td><%= project.proj_status %></td>
+        <td><%= project.proj_status_prev %></td>
+        <td><%= project.proj_notes %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+

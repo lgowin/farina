@@ -1,0 +1,101 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project name:</strong>
+  <%= @project.project_name %>
+</p>
+
+<p>
+  <strong>Product line:</strong>
+  <%= @project.product_line %>
+</p>
+
+<p>
+  <strong>Program:</strong>
+  <% pid = @project.program_id %>
+  <%= Program.find_by_id(pid).program_name %>
+</p>
+
+<p>
+  <strong>Project priority:</strong>
+  <%= @project.project_priority %>
+</p>
+
+<p>
+  <strong>Project phase:</strong>
+  <%= @project.project_phase %>
+</p>
+
+<p>
+  <strong>Sponsor:</strong>
+  <%= @project.sponsor %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <% id = @project.person_id %>
+  <%= Person.find_by_id(id).name %></td>
+</p>
+
+<p>
+  <strong>Proj status:</strong>
+  <%= @project.proj_status %>
+</p>
+
+<p>
+  <strong>Proj status prev:</strong>
+  <%= @project.proj_status_prev %>
+</p>
+
+<p>
+  <strong>Proj notes:</strong>
+  <%= @project.proj_notes %>
+</p>
+
+<button <button style="background-color:lightgreen"><%= link_to 'Edit Project', edit_project_path(@project) %></button><br> 
+
+<button><%= link_to 'Back', projects_path %></button>
+
+
+<h2>Tasks for <%= @project.project_name %> </h2>
+
+<table>
+<table border = "8" cellspacing="0" bgcolor="#FFFFE0">
+  <tr>
+  <thead>
+      <td>Num</td>
+      <td>Name</td>
+      <td>Person</td>
+      <td>Pct of Time</td>
+      <td>Baseline Start</td>
+      <td>Baseline Finish</td>
+      <td>Projected Start</td>
+      <td>Projected Finish</td>
+      <td>Dependencies</td>
+      <td>Status</td>
+      <td>Notes</td>
+  </thead>
+  </tr>
+<% for task in @project.tasks %>  
+  <tr>
+    <td><%= task.task_num %></td>
+    <td><%= task.task_name %></td>
+    <td><% id = task.person_id %>
+        <%= Person.find_by_id(id).name %></td>
+    <td><%= task.pct_time %></td>
+    <td><%= task.base_start %></td>
+    <td><%= task.base_finish %></td>
+    <td><%= task.proj_start %></td>
+    <td><%= task.proj_finish %></td>
+    <td><%= task.task_deps %></td>
+    <td><%= task.task_status %></td>
+    <td><%= task.task_notes %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+<br>
+
+<button style="background-color:red"><%= link_to 'Delete Project', @project, method: :delete, data: { confirm: 'Are you sure?' } %></button><br>
+
